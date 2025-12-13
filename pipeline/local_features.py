@@ -1,5 +1,5 @@
 """
-Build model-ready features locally from data/sample_static.csv (small dev sample).
+Build model-ready features locally from sample_static.
 
 Outputs:
 - data/sample_features.parquet (features + label_default)
@@ -117,7 +117,6 @@ def build_local_features(input_csv: str = INPUT_CSV, output_parquet: str = OUTPU
         "purpose", "application_type", "initial_list_status",
         "fico_low", "delinq_2yrs", "inq_last_6mths", "open_acc", "total_acc",
         "pub_rec", "revol_bal", "revol_util", "collections_12_mths_ex_med",
-        # optional
         "acc_now_delinq", "tot_cur_bal", "tot_hi_cred_lim", "bc_util",
         "percent_bc_gt_75", "avg_cur_bal", "total_rev_hi_lim", "acc_open_past_24mths",
         "num_rev_tl_bal_gt_0", "pct_tl_nvr_dlq", "num_accts_ever_120_pd",
@@ -128,11 +127,9 @@ def build_local_features(input_csv: str = INPUT_CSV, output_parquet: str = OUTPU
     final_cols = [c for c in feature_cols if c in df.columns] + ["label_default"]
     out = df[final_cols].copy()
 
-    # Save parquet
     os.makedirs(os.path.dirname(output_parquet), exist_ok=True)
     out.to_parquet(output_parquet, index=False)
 
-    # Quick report
     report = {
         "input_rows": before,
         "kept_rows": after,
