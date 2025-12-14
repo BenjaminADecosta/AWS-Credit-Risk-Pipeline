@@ -1,2 +1,12 @@
+__pycache__/
+*.py[cod]
+
 data/*
-!data/sample_static.csv
+!data/sample_monthly.csv
+data/*.parquet
+
+artifacts/*.joblib
+*.joblib
+artifacts/metrics.json
+artifacts/feature.columns.json
+artifacts/model_version.txt

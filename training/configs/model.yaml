@@ -1,0 +1,12 @@
+model_version: "v1-local"
+horizon_months: 3
+
+risk_thresholds:
+  low_max: 0.02
+  medium_max: 0.08
+
+# Training split
+split:
+  test_size: 0.2
+  random_state: 42
+  group_col: id

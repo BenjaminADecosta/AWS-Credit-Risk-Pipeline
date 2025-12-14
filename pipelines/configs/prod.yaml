@@ -1,0 +1,13 @@
+horizon_months: 3
+monthly:
+  id_col: id
+  month_col: as_of_month
+  dpd_col: days_past_due
+  status_col: status
+  delinquent_statuses:
+    - "Late (31-120 days)"
+    - "Default"
+    - "Charged Off"
+static:
+  id_col: id
+windows_months: [3, 6, 12]

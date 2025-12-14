@@ -1,0 +1,12 @@
+horizon_months: 3
+windows_months: [3, 6, 12]
+
+monthly:
+  id_col: id
+  month_col: as_of_month
+  dpd_col: days_past_due
+  status_col: status
+  delinquent_statuses: []
+
+static:
+  id_col: id

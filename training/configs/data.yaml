@@ -1,0 +1,16 @@
+features_parquet: "data/sample_features.parquet"
+
+label_col: "label_next_nm"
+
+id_cols: ["id", "as_of_month"]
+
+drop_cols: []
+
+categorical_cols:
+  - home_ownership
+  - verification_status
+  - purpose
+  - application_type
+  - term
+  - grade
+  - sub_grade
